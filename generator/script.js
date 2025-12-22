@@ -21,9 +21,12 @@ async function loadDepartures(STOP_ID) {
     alert("error while loading!");
   }
 }
-navigator.geolocation.getCurrentPosition((pos) => {
-  console.log(pos);
-  const lat = pos.coords.latitude;
-  const lon = pos.coords.longitude;
-  console.log(`${lat}°N ${lon}°E`);
-});
+function pos() {
+  navigator.geolocation.getCurrentPosition((pos) => {
+    //console.log(pos);
+    const lat = pos.coords.latitude;
+    const lon = pos.coords.longitude;
+    //console.log(`${lat}°N ${lon}°E`);
+    return [lat, lon];
+  });
+}
